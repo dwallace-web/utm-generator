@@ -9,64 +9,75 @@
   </head>
   <body class="grid grid-cols-3 gap-4 bg-slate-100">
     <!-- intro -->
-    <div class="col-span-3 rounded-xl p-8 content-center">
+    <div class="col-span-3 rounded-xl p-8">
       <div>
         <h1 class="text-3xl font-bold">Campaign URL Generator</h1>
         <h2>Generate campaign links to measure marketing campaigns</h2>
         <h4 class="text-2xl">Build a UTM</h4>
         <h3 class="text-red-700">Version 1</h3>
         <p>
-          UTM strings are industry standard measurement dimensions and compatiable tools many
-          marketers use in 2023. UTM's may have one or more inputs such as the campaign,
-          source, medium or content string. Let's build a set of campaign UTMs.
-          This will improve the speed of making campaign utms.
+          UTM strings are industry standard measurement dimensions and
+          compatiable tools many marketers use in 2023. UTM's may have one or
+          more inputs such as the campaign, source, medium or content string.
+          Let's build a set of campaign UTMs. This will improve the speed of
+          making campaign utms. Input your campaign details and get UTM outputs immediately.
         </p>
       </div>
     </div>
     <!-- form starts here -->
-    <div class="col-span-3 rounded-xl p-8">
+    <div class="col-span-3 p-8">
       <form>
-        <label for="url">URL</label>
-        <!-- url  -->
-        <input
-          type="text"
-          name="url"
-          id="url"
-          tile="url"
-          placeholder="https://www.site.com/example"
-          required
-        />
+        <div class="col-span-3">
+          <label for="url">URL</label>
+          <!-- url  -->
+          <input
+            type="text"
+            name="url"
+            id="url"
+            tile="url"
+            placeholder="https://www.site.com/example"
+            required
+          />
+        </div>
         <!-- campaign -->
-        <label for="campaign">Campaign</label>
-        <input
-          type="text"
-          name="campaign"
-          id="campaign"
-          title="Campaign Input"
-          placeholder="Campaign Input"
-          required
-        />
-        <!--  source-->
-        <label for="source">Source</label>
-        <input
-          type="text"
-          name="source"
-          id="source"
-          title="Source Input"
-          placeholder="Source Input"
-          required
-        />
-        <!--  medium -->
-        <label for="medium">Medium</label>
-        <input
-          type="text"
-          name="medium"
-          id="medium"
-          title="Medium Input"
-          placeholder="Medium Input"
-          required
-        />
+        <div class="col-span-3">
+          <label for="campaign">Campaign</label>
+          <input
+            type="text"
+            name="campaign"
+            id="campaign"
+            title="Campaign Input"
+            placeholder="Campaign Input"
+            required
+          />
+        </div>
+        <div class="col-span-3">
+          <!--  source-->
+          <label for="source">Source</label>
+          <input
+            type="text"
+            name="source"
+            id="source"
+            title="Source Input"
+            placeholder="Source Input"
+            required
+          />
+        </div>
+        <div class="col-span-3">
+          <!--  medium -->
+          <label for="medium">Medium</label>
+          <input
+            type="text"
+            name="medium"
+            id="medium"
+            title="Medium Input"
+            placeholder="Medium Input"
+            required
+          />
+        </div>
+
         <div class="content">
+          <label for="creative">Creative</label>
           <!-- content -->
           <input
             type="text"
@@ -75,43 +86,48 @@
             title="creative Input"
             placeholder="Creative Input"
           />
-          <label for="creative">Creative</label>
         </div>
         <!-- checkboxes -->
         <!-- This campaign builder will output one per ad size selected.  -->
 
-        <div class="checkboxes">
-          <!-- Select the ad unit sizes-->
-          <input type="checkbox" name="300x250" id="300x250" value="300x250" />
-          <label for="300x250">300x250</label>
-          <br />
-          <!-- Select the ad unit sizes-->
-          <input type="checkbox" name="728x90" id="728x90" value="728x90" />
-          <label for="728x90">728x90</label>
-          <br />
-          <!-- Select the ad unit sizes-->
-          <input
-            type="checkbox"
-            name="300x50"
-            id="300x50"
-            value="300x50"
-            title="Ad Unit Size 300x50"
-          />
-          <label for="300x50">300x50</label>
-          <br />
-          <!-- Select the ad unit sizes-->
-          <input
-            type="checkbox"
-            name="320x50"
-            id="320x50"
-            value="320x50"
-            title="Ad Unit Size 320x50"
-          />
-          <label for="320x50">320x50</label>
-          <br />
+        <div class="col-span-3">
+          <div class="checkboxes">
+            <!-- Select the ad unit sizes-->
+            <input
+              type="checkbox"
+              name="300x250"
+              id="300x250"
+              value="300x250"
+            />
+            <label for="300x250">300x250</label>
+            <br />
+            <!-- Select the ad unit sizes-->
+            <input type="checkbox" name="728x90" id="728x90" value="728x90" />
+            <label for="728x90">728x90</label>
+            <br />
+            <!-- Select the ad unit sizes-->
+            <input
+              type="checkbox"
+              name="300x50"
+              id="300x50"
+              value="300x50"
+              title="Ad Unit Size 300x50"
+            />
+            <label for="300x50">300x50</label>
+            <br />
+            <!-- Select the ad unit sizes-->
+            <input
+              type="checkbox"
+              name="320x50"
+              id="320x50"
+              value="320x50"
+              title="Ad Unit Size 320x50"
+            />
+            <label for="320x50">320x50</label>
+            <br />
+          </div>
         </div>
-
-        <button type="submit" onclick="generate" id="generate">Generate</button>
+        <button class="bg-slate-400" type="submit" onclick="generate" id="generate">Generate</button>
       </form>
     </div>
     <!-- generated urls go here -->
