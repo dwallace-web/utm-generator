@@ -20,6 +20,8 @@ let campaign_url_table = document.getElementById('campaign-url-table')
 
 let request_no = 0
 
+let urls = []
+
 checkboxes.forEach(x => {
     x.addEventListener('change', (event) => {
         if (event.target.checked) {
@@ -57,6 +59,7 @@ function makeLinks(e) {
             //ternary for ad sizing
                 x !== '' ? creative_details += "-" + x : null
             base_campaign_string+=creative_details
+            urls.push(base_campaign_string)
         }
 
         new_link = document.createElement('tr');

@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/output.css" rel="stylesheet" />
+    <link href="output.css" rel="stylesheet" />
     <title>Campaign URL Generator</title>
   </head>
-  <body class="grid grid-cols-3 gap-4 bg-sky-50">
+  <body class="grid grid-cols-3 bg-sky-50">
     <!-- intro -->
     <div class="col-span-3 rounded-xl p-8">
       <div>
@@ -26,78 +26,71 @@
       </div>
     </div>
     <!-- form starts here -->
-    <div class="col-span-3 p-8">
+    <div class="col-span-3">
       <form class="p-8 space-y-8 rounded-md">
-        <div class="inputs p-8 border space-y-8 bg-zinc-100 rounded-md ">
-          <div class="col-span-3">
-            <label for="url">URL</label>
-            <!-- url  -->
-            <input
-              type="text"
-              name="url"
-              id="url"
-              tile="url"
-              placeholder="www.site.com"
-              required
-            />
-          </div>
+        <div
+          class="p-8 border bg-zinc-100 rounded-md grid grid-cols-2 grid-rows-3 gap-4 space-y-2"
+        >
+          <label for="url">URL</label>
+          <!-- url  -->
+          <input
+            type="text"
+            name="url"
+            id="url"
+            tile="url"
+            placeholder="www.site.com"
+            required
+          />
           <!-- campaign -->
-          <div class="col-span-3">
-            <label for="campaign">Campaign</label>
-            <input
-              type="text"
-              name="campaign"
-              id="campaign"
-              title="Campaign Input"
-              placeholder="Campaign Input"
-              required
-            />
-          </div>
-          <div class="col-span-3">
-            <!--  source-->
-            <label for="source">Source</label>
-            <input
-              type="text"
-              name="source"
-              id="source"
-              title="Source Input"
-              placeholder="Source Input"
-              required
-            />
-          </div>
-          <div class="col-span-3">
-            <!--  medium -->
-            <label for="medium">Medium</label>
-            <input
-              type="text"
-              name="medium"
-              id="medium"
-              title="Medium Input"
-              placeholder="Medium Input"
-              required
-            />
-          </div>
+          <label for="campaign">Campaign</label>
+          <input
+            type="text"
+            name="campaign"
+            id="campaign"
+            title="Campaign Input"
+            placeholder="Campaign Name"
+            required
+          />
 
-          <div class="content">
-            <label for="creative">Creative</label>
-            <!-- content -->
-            <input
-              type="text"
-              name="creative"
-              id="creative"
-              title="creative Input"
-              placeholder="Creative Input"
-            />
-          </div>
+          <!--  source-->
+          <label for="source">Source</label>
+          <input
+            type="text"
+            name="source"
+            id="source"
+            title="Source Input"
+            placeholder="Source / Publisher"
+            required
+          />
+          <!--  medium -->
+          <label for="medium">Medium</label>
+          <input
+            type="text"
+            name="medium"
+            id="medium"
+            title="Medium Input"
+            placeholder="Medium / Channel"
+            required
+          />
+
+          <label for="creative">Creative</label>
+          <!-- content -->
+          <input
+            type="text"
+            name="creative"
+            id="creative"
+            title="creative Input"
+            placeholder="Creative Message"
+          />
         </div>
         <!-- checkboxes -->
         <!-- This campaign builder will output one per ad size selected.  -->
 
-        <div class="col-span-3">
-          <div class="checkboxes inputs p-8 border space-y-8 bg-zinc-100 rounded-md ">
-            <!-- Select the ad unit sizes-->
-            <h1>Select Your Creative Sizes</h1>
-            <div class="grid-rows-3 space-y-8">
+        <div class="p-8 border space-y-8 bg-zinc-100 rounded-md">
+          <!-- Select the ad unit sizes-->
+          <h1>Select Your Creative Sizes</h1>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="">
               <input
                 type="checkbox"
                 name="300x250"
@@ -106,11 +99,15 @@
               />
               <label for="300x250">300x250</label>
               <br />
+            </div>
+            <div class="">
               <!-- Select the ad unit sizes-->
               <input type="checkbox" name="728x90" id="728x90" value="728x90" />
               <label for="728x90">728x90</label>
               <br />
-              <!-- Select the ad unit sizes-->
+            </div>
+            <!-- Select the ad unit sizes-->
+            <div class="">
               <input
                 type="checkbox"
                 name="300x50"
@@ -120,6 +117,8 @@
               />
               <label for="300x50">300x50</label>
               <br />
+            </div>
+            <div class="">
               <!-- Select the ad unit sizes-->
               <input
                 type="checkbox"
@@ -131,13 +130,41 @@
               <label for="320x50">320x50</label>
               <br />
             </div>
+            <div class="">
+              <!-- Select the ad unit sizes-->
+              <input
+                type="checkbox"
+                name="970x250"
+                id="970x250"
+                value="970x250"
+                title="Ad Unit Size 970x250"
+              />
+              <label for="320x50">970x250</label>
+              <br />
+            </div>
+            <div class="">
+              <!-- Select the ad unit sizes-->
+              <input
+                type="checkbox"
+                name="300x600"
+                id="300x600"
+                value="300x600"
+                title="Ad Unit Size 300x600"
+              />
+              <label for="300x600">300x600</label>
+              <br />
+            </div>
           </div>
         </div>
+
+        <!-- <button class="" type="submit" onclick="generate" id="generate">
+            Generate
+        </button> -->
         <button
-          class=""
           type="submit"
           onclick="generate"
           id="generate"
+          class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-green-100 border border-transparent font-semibold text-green-500 hover:text-white hover:bg-green-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-green-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
         >
           Generate
         </button>
